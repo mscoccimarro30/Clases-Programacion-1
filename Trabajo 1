@@ -1,0 +1,49 @@
+/*
+ ============================================================================
+ Name        : Clase.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_INT 64000
+int sumaEnteros(int primerValor, int segundoValor)
+int main(void)
+{
+	int primerValor;
+	int segundoValor;
+	int resultado;
+	printf("Valor 1?\n");
+	scanf("%d", &primerValor);
+	printf("Ingrese valor 2?");
+	scanf("%d", segundoValor);
+	if( sumaEnteros (primerValor,segundoValor, &resultado)==0)// &resultado le da acceso al almacenamiento de memoria de resultado//
+	{
+	printf("El resultado es %d\n", &resultado);
+    }
+	else
+	{
+	printf("Error");
+	}
+
+
+int sumaEnteros(int primerValor, int segundoValor, int *resultado)// int
+	{
+	int retorno =-1;
+	long resultadoLong;
+	int resultadoInt;
+	resultadoLong = primerValor +segundoValor;
+	if(resultadoLong <= MAX_INT) // el difine le asigna el valor maximo y si es menor o igual a define ingresa al if
+	{
+		retorno=0;
+		*resultado= (int)resultadoLong;//resultado long es si el valor supera el rango numerico
+	}
+	return retorno;
+
+
+
+}
